@@ -1,0 +1,4 @@
+trip,leg,direction,source_zip,start_utc,start_local_stockholm,duration_s,n_samples_100hz,device,app_version,acc_rms_ms2,gyr_rms_rads,mean_pitch_rad,mean_roll_rad,dominant_freq_hz,stationary_pct
+trip1_outbound,outbound,A->B,2026-09-17_07-21-07.zip,2026-09-17T07:21:07,2026-09-17 09:21:07,112.27,11227,iPhone 14,1.65.1,0.881,0.327,0.132,-0.033,1.22,0.0
+trip2_return,return,B->A,2026-09-17_07-24-16.zip,2026-09-17T07:24:16,2026-09-17 09:24:16,77.36,7736,iPhone 14,1.65.1,1.254,0.458,0.129,0.006,3.35,0.0
+trip3_outbound,outbound,A->B,2026-09-17_07-31-11.zip,2026-09-17T07:31:11,2026-09-17 09:31:11,132.03,13204,iPhone 14,1.65.1,1.565,0.202,0.02,-0.008,0.4,31.6
