@@ -1,8 +1,9 @@
 column,applies_to,unit,description
 timestamp_utc,all files,ISO8601 UTC,Absolute sample time (UTC). Local time = UTC+2 (Europe/Stockholm CEST).
 time_ns,per-sensor files,ns,Original Sensor Logger epoch timestamp in nanoseconds. Authoritative clock.
-seconds_elapsed,per-sensor files,s,Seconds since that sensor's recording start (as exported by the app).
-t_s,merged files,s,Seconds since start of the common time grid for that trip (0.01 s steps).
+seconds_elapsed,per-sensor files,s,Seconds since the ORIGINAL recording start. For trimmed trip3 this starts at 49.0 not 0.
+t_s,merged files,s,Seconds since start of the delivered window for that trip (0.01 s steps); restarts at 0 for every trip.
+t_s_recording,merged files,s,Seconds since the ORIGINAL recording start. Equals t_s for trips 1-2; offset by +49.0 s for the trimmed trip3.
 trip,merged files,-,Trip identifier (trip1_outbound / trip2_return / trip3_outbound).
 leg,merged files,-,outbound or return.
 acc_x/acc_y/acc_z,accelerometer,m/s^2,User (linear) acceleration in device frame. GRAVITY ALREADY REMOVED.

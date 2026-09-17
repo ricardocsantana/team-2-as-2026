@@ -1,0 +1,7 @@
+recording,gyro_thr,acc_thr,strides,stride_hz,valid,corners,raw_path_m,polyline_path_m,raw_chord_m,polyline_chord_m,legs_m,turns_deg,vertical_drift_m,median_stride_m,duration_s
+outbound_A_to_B,0.35,1.2,40,0.44,False,1,69.17,54.05,53.83,53.43,2.7 / 51.4,-41,0.97,1.344,90.5
+outbound_A_to_B,0.5,2.0,53,0.59,True,2,68.52,67.99,53.9,54.64,6.2 / 51.3 / 10.5,-49 / +105,0.38,1.337,90.5
+outbound_A_to_B,0.8,3.0,54,0.6,True,2,67.94,67.35,53.35,54.32,6.2 / 50.7 / 10.4,-49 / +104,1.15,1.329,90.5
+return_B_to_A,0.35,1.2,25,0.32,False,1,67.64,60.88,52.15,52.78,8.7 / 52.2,-91,0.04,2.014,79.1
+return_B_to_A,0.5,2.0,46,0.58,True,2,67.85,65.7,54.4,55.37,9.2 / 50.1 / 6.3,-94 / +51,-0.06,1.368,79.1
+return_B_to_A,0.8,3.0,54,0.68,True,2,67.31,65.21,53.95,54.91,9.2 / 49.8 / 6.2,-94 / +51,0.77,1.369,79.1

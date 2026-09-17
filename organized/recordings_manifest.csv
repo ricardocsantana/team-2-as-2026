@@ -1,0 +1,7 @@
+recording,direction,mount,source,duration_s,device,app_version,has_location
+foot1_outbound,A->B,foot-mounted,foot/Link_ping_University-2026-09-17_08-24-55.zip,90.43,iPhone 14,1.65.1,True
+foot2_return,B->A,foot-mounted,foot/Link_ping_University-2026-09-17_08-27-06.zip,79.07,iPhone 14,1.65.1,True
+keyleg1,B->A leg 1,hand-carried,point-to-point-back/2026-09-17_08-00-41.zip,13.55,iPhone 14,1.65.1,False
+keyleg2,B->A leg 2,hand-carried,point-to-point-back/2026-09-17_08-00-56.zip,39.45,iPhone 14,1.65.1,False
+keyleg3,B->A leg 3,hand-carried,point-to-point-back/2026-09-17_08-01-38.zip,7.29,iPhone 14,1.65.1,False
+foot3_roundtrip,A->B->A,foot-mounted,foot_roundtrip/Link_ping_University-2026-09-17_08-54-13.zip,162.86,iPhone 14,1.65.1,True
