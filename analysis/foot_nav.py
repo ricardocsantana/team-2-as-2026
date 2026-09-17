@@ -150,7 +150,37 @@ def _intersect(c1, u1, c2, u2, fallback):
     return p
 
 
-def find_corners(pts, turn_thr_deg=40.0, persist=2, min_leg_m=3.0):
+def find_tail_corner(pts, turn_thr_deg=40.0, tail_m=4.0, min_tail_m=0.8):
+    """Corner inside the last few metres, which the main detector cannot see.
+
+    A final leg of 1-2 strides has too few footprints after it to fill the main
+    detector's lookahead window, and it is shorter than its min_leg_m floor, so
+    a genuine short segment just before the destination is merged away.  This
+    looks for it explicitly: the largest per-stride heading change within
+    `tail_m` of the end that still leaves `min_tail_m` of travel after it.
+
+    Returns an index into `pts`, or None.  Kept separate from find_corners so
+    that relaxing the tail cannot destabilise the main route segmentation.
+    """
+    if len(pts) < 4:
+        return None
+    ang = np.unwrap(np.arctan2(np.diff(pts, axis=0)[:, 1], np.diff(pts, axis=0)[:, 0]))
+    thr = np.deg2rad(turn_thr_deg)
+    best, best_turn = None, thr
+    for i in range(1, len(ang)):
+        # Straight-line displacement to the end, NOT path distance: a walker
+        # pivoting on the spot racks up path length while going nowhere, and
+        # would otherwise masquerade as a short final segment.
+        to_end = np.linalg.norm(pts[-1] - pts[i])
+        if to_end > tail_m or to_end < min_tail_m:
+            continue
+        turn = abs(ang[i] - ang[i - 1])
+        if turn > best_turn:
+            best, best_turn = i, turn
+    return best
+
+
+def find_corners(pts, turn_thr_deg=40.0, persist=2, min_leg_m=3.0, tail_m=4.0):
     """Indices into `pts` where the route turns.
 
     The 40 deg default is the centre of a 36-44 deg plateau over which all four
@@ -195,6 +225,12 @@ def find_corners(pts, turn_thr_deg=40.0, persist=2, min_leg_m=3.0):
         next_len = np.linalg.norm(pts[bounds[j + 2]] - pts[c])
         if prev_len >= min_leg_m and next_len >= min_leg_m:
             kept.append(c)
+
+    # Then admit a short final segment the main pass structurally cannot see.
+    if tail_m:
+        tc = find_tail_corner(pts, turn_thr_deg=turn_thr_deg, tail_m=tail_m)
+        if tc is not None and (not kept or tc > kept[-1] + 1):
+            kept.append(tc)
     return kept
 
 
@@ -228,14 +264,29 @@ def fit_polyline(pts, corners):
     return way, legs, np.array(turns), segs
 
 
+def fit_route(pts, min_final_leg=1.0, **corner_kw):
+    """Corners + polyline, with the short-tail corner validated after fitting.
+
+    A tail corner is only kept if the leg it creates survives the line fit at
+    >= min_final_leg.  The pivot at the destination can pass the pre-fit test
+    (it has some displacement) but collapses once the trailing footprints are
+    fitted to a line, so the check has to happen after.
+    """
+    corners = find_corners(pts, **corner_kw)
+    way, legs, turns, segs = fit_polyline(pts, corners)
+    if len(legs) > 1 and legs[-1] < min_final_leg and corners:
+        corners = corners[:-1]
+        way, legs, turns, segs = fit_polyline(pts, corners)
+    return corners, way, legs, turns, segs
+
+
 def solve(fname, thresholds=STANCE_DEFAULT, folder=None, **corner_kw):
     """Full pipeline for one recording."""
     d = load(fname, folder)
     runs = detect_stance(d, thresholds)
     pos, vel = integrate(d, runs)
     pts, idx = stance_positions(pos, runs)
-    corners = find_corners(pts, **corner_kw)
-    way, legs, turns, segs = fit_polyline(pts, corners)
+    corners, way, legs, turns, segs = fit_route(pts, **corner_kw)
 
     strides = np.linalg.norm(np.diff(pts, axis=0), axis=1)
     strides = strides[strides > 0.2]

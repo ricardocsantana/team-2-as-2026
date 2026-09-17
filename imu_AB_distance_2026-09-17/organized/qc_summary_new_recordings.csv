@@ -1,0 +1,58 @@
+recording,sensor,unit,n_samples,duration_s,rate_hz,dt_min_ms,dt_max_ms,gaps_gt_50ms,duplicate_timestamps,n_missing,monotonic_time
+foot1_outbound,accelerometer,m/s^2,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,accelerometer_uncalibrated,g,9082,90.438,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,gravity,m/s^2,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,gyroscope,rad/s,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,gyroscope_uncalibrated,rad/s,9082,90.438,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,magnetometer,uT,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,magnetometer_uncalibrated,uT,8762,90.439,96.871,10.32,10.326,0,0,0,True
+foot1_outbound,orientation,rad / unit quaternion,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,compass,deg,9081,90.428,100.412,9.958,9.961,0,0,0,True
+foot1_outbound,location,deg / m,20,160.956,0.151,493.433,38728.682,19,0,0,True
+foot2_return,accelerometer,m/s^2,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,accelerometer_uncalibrated,g,7942,79.086,100.412,9.958,9.961,0,0,0,True
+foot2_return,gravity,m/s^2,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,gyroscope,rad/s,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,gyroscope_uncalibrated,rad/s,7941,79.076,100.412,9.958,9.961,0,0,0,True
+foot2_return,magnetometer,uT,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,magnetometer_uncalibrated,uT,7661,79.076,96.869,10.32,10.326,0,0,0,True
+foot2_return,orientation,rad / unit quaternion,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,compass,deg,7940,79.066,100.412,9.958,9.961,0,0,0,True
+foot2_return,location,deg / m,18,116.983,0.152,42.909,43308.199,16,0,0,True
+keyleg1,accelerometer,m/s^2,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg1,accelerometer_uncalibrated,g,1363,13.564,100.413,9.958,9.96,0,0,0,True
+keyleg1,gravity,m/s^2,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg1,gyroscope,rad/s,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg1,gyroscope_uncalibrated,rad/s,1363,13.564,100.413,9.958,9.96,0,0,0,True
+keyleg1,magnetometer,uT,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg1,magnetometer_uncalibrated,uT,1315,13.563,96.879,10.319,10.325,0,0,0,True
+keyleg1,orientation,rad / unit quaternion,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg1,compass,deg,1362,13.554,100.413,9.957,9.96,0,0,0,True
+keyleg2,accelerometer,m/s^2,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg2,accelerometer_uncalibrated,g,3964,39.466,100.413,9.957,9.96,0,0,0,True
+keyleg2,gravity,m/s^2,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg2,gyroscope,rad/s,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg2,gyroscope_uncalibrated,rad/s,3964,39.466,100.413,9.957,9.96,0,0,0,True
+keyleg2,magnetometer,uT,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg2,magnetometer_uncalibrated,uT,3825,39.473,96.875,10.319,10.326,0,0,0,True
+keyleg2,orientation,rad / unit quaternion,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg2,compass,deg,3962,39.447,100.413,9.957,9.96,0,0,0,True
+keyleg3,accelerometer,m/s^2,733,7.29,100.413,9.957,9.96,0,0,0,True
+keyleg3,accelerometer_uncalibrated,g,735,7.31,100.413,9.957,9.96,0,0,0,True
+keyleg3,gravity,m/s^2,733,7.29,100.413,9.957,9.96,0,0,0,True
+keyleg3,gyroscope,rad/s,733,7.29,100.413,9.957,9.96,0,0,0,True
+keyleg3,gyroscope_uncalibrated,rad/s,734,7.3,100.413,9.958,9.96,0,0,0,True
+keyleg3,magnetometer,uT,733,7.29,100.413,9.957,9.96,0,0,0,True
+keyleg3,magnetometer_uncalibrated,uT,708,7.298,96.88,10.32,10.324,0,0,0,True
+keyleg3,orientation,rad / unit quaternion,733,7.29,100.413,9.957,9.96,0,0,0,True
+keyleg3,compass,deg,733,7.29,100.413,9.957,9.96,0,0,0,True
+foot3_roundtrip,accelerometer,m/s^2,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,accelerometer_uncalibrated,g,16357,162.892,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,gravity,m/s^2,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,gyroscope,rad/s,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,gyroscope_uncalibrated,rad/s,16357,162.892,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,magnetometer,uT,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,magnetometer_uncalibrated,uT,15782,162.899,96.878,10.319,10.326,0,0,0,True
+foot3_roundtrip,orientation,rad / unit quaternion,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,compass,deg,16354,162.862,100.412,9.958,9.961,0,0,0,True
+foot3_roundtrip,location,deg / m,32,189.979,0.151,596.786,11382.211,31,0,0,True

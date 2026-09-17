@@ -79,8 +79,7 @@ def analyse(thresholds=fn.STANCE_DEFAULT):
            "closure_corrected": float(closed), "closure_uncorrected": float(uncorrected)}
 
     for tag, P in (("out", out_pts), ("ret", ret_pts)):
-        corners = fn.find_corners(P)
-        way, legs, turns, _ = fn.fit_polyline(P, corners)
+        corners, way, legs, turns, _ = fn.fit_route(P)
         res[tag] = dict(pts=P, waypoints=way, legs=legs, turns=turns,
                         poly_path=float(legs.sum()),
                         poly_chord=float(np.linalg.norm(way[-1] - way[0])),

@@ -1,7 +1,7 @@
 # IMU dataset — trips between two points (A ↔ B)
 
 > **The distance question is answered in [`DISTANCE_REPORT.md`](DISTANCE_REPORT.md):**
-> **66.6 m of walking between points 54.8 m apart.** This file documents the first three
+> **66.3 m of walking between points 54.2 m apart.** This file documents the first three
 > recordings; later recordings live in `../point-to-point-back/` and `../foot/`.
 
 iPhone 14 · Sensor Logger 1.65.1 · 2026-09-17 · Europe/Stockholm (UTC+2)

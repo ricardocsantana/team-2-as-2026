@@ -1,0 +1,2 @@
+version,device name,recording epoch time,recording time,recording timezone,platform,appVersion,device id,sensors,sampleRateMs,standardisation,platform version
+3,iPhone 14,1789629856210,2026-09-17_07-24-16,Europe/Stockholm,ios,1.65.1,f24d06db-f205-45df-9fef-e162378af3f2,Accelerometer|Gravity|Gyroscope|Orientation|Magnetometer|Compass|Annotation|MagnetometerUncalibrated|GyroscopeUncalibrated|AccelerometerUncalibrated,10|10|10|10|10|10||10|10|10,false,27.0

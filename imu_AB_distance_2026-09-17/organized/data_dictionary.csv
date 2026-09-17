@@ -1,0 +1,21 @@
+column,applies_to,unit,description
+timestamp_utc,all files,ISO8601 UTC,Absolute sample time (UTC). Local time = UTC+2 (Europe/Stockholm CEST).
+time_ns,per-sensor files,ns,Original Sensor Logger epoch timestamp in nanoseconds. Authoritative clock.
+seconds_elapsed,per-sensor files,s,Seconds since the ORIGINAL recording start. For trimmed trip3 this starts at 49.0 not 0.
+t_s,merged files,s,Seconds since start of the delivered window for that trip (0.01 s steps); restarts at 0 for every trip.
+t_s_recording,merged files,s,Seconds since the ORIGINAL recording start. Equals t_s for trips 1-2; offset by +49.0 s for the trimmed trip3.
+trip,merged files,-,Trip identifier (trip1_outbound / trip2_return / trip3_outbound).
+leg,merged files,-,outbound or return.
+acc_x/acc_y/acc_z,accelerometer,m/s^2,User (linear) acceleration in device frame. GRAVITY ALREADY REMOVED.
+acc_raw_x/y/z,accelerometer_uncalibrated,g,Raw accelerometer in g (includes gravity). acc_raw*9.80665 - grav = acc.
+grav_x/grav_y/grav_z,gravity,m/s^2,Gravity vector in device frame. Norm is constant 9.8067.
+gyr_x/gyr_y/gyr_z,gyroscope,rad/s,Bias-corrected angular rate in device frame.
+gyr_raw_x/y/z,gyroscope_uncalibrated,rad/s,Uncorrected angular rate (bias approx 3e-3 rad/s vs calibrated).
+mag_x/mag_y/mag_z,magnetometer,uT,Hard/soft-iron calibrated magnetic field in device frame.
+mag_raw_x/y/z,magnetometer_uncalibrated,uT,Uncalibrated magnetic field; large hard-iron offset (norm approx 437 uT).
+ori_qw/ori_qx/ori_qy/ori_qz,orientation,unit quaternion,Device attitude quaternion (CoreMotion). Renormalised in merged files.
+ori_roll/ori_pitch/ori_yaw,orientation,rad,Euler attitude. yaw wraps in [-pi,pi]; interpolated on the unit circle.
+compass_bearing_deg,compass,deg,Magnetic bearing 0-360 (0=magnetic north). Interpolated on the unit circle.
+acc_magnitude,merged files,m/s^2,Norm of user acceleration (derived).
+gyr_magnitude,merged files,rad/s,Norm of angular rate (derived).
+mag_magnitude,merged files,uT,Norm of calibrated magnetic field (derived).
